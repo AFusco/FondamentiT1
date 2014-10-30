@@ -140,13 +140,7 @@ void stampaTriangolo(int **triangolo, int righe)
 
 void printNum(int x, int lMax)
 {
-    int i;
-    int spazi = lMax - numCifre(x);
-    for (i = 0; i < spazi; i++)
-    {
-        printf(" ");
-    }
-    printf("%d",x);
+    printf("%*d",lMax, x);
 }
 
 /**********
