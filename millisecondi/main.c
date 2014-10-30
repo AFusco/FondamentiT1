@@ -7,15 +7,18 @@
 //
 
 #include <stdio.h>
+#include "procedure.h"
 
 int main(int argc, const char * argv[]) {
-    int a;
+    long int millisec;
+
+    do {
+        printf("Inserisci i millisecondi: ");
+        scanf("%ld", &millisec);
+    } while (millisec < 0);
     
-    scanf("%d%*c", &a);
-    printf("Hai scritto %d. Premi invio per uscire... ", a);
-    
+    millisec2Tempo(millisec);
     getchar();
-    
-    
+    getchar();
     return 0;
 }
