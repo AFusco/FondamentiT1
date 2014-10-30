@@ -10,20 +10,13 @@
 
 void millisec2Tempo(long int millisec)
 {
-    int mil, sec, min;
+    long int min;
+    int sec, mil;
     
     mil = millisec % 1000;
+    min = (millisec/1000)/60;
+    sec = (millisec/1000)%60;
     
-    if (millisec != 0)
-    {
-        sec = millisec/1000;
-        if (sec != 0)
-        {
-            min = sec/60;
-        }
-        sec %= 60;
-    }
-    
-    printf("%d:%02d.%03d", min, sec, mil);
+    printf("%ld:%02d.%03d", min, sec, mil);
 }
 
