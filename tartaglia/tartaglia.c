@@ -5,6 +5,8 @@
 //  Created by Alessandro Fusco on 30/10/14.
 //  Copyright (c) 2014 Alessandro Fusco. All rights reserved.
 //
+// Aggiunto un commento
+
 
 #include "tartaglia.h"
 
