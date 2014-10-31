@@ -29,6 +29,11 @@ int** mallocTriangolo(int righe)
     for (i = 0; i < righe; i++)
     {
         triangolo[i] = calloc( i+1, sizeof(int));
+        if (triangolo[i] == NULL)
+        {
+            freeTriangolo(triangolo, i);
+            return NULL;
+        }
     }
     return triangolo;
 }
