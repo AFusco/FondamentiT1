@@ -211,3 +211,4 @@ xcuserdata
 *.pbxproj
 tartaglia.xcodeproj
 millisecondi.xcodeproj/project.xcworkspace/xcshareddata
+*.xccheckout
