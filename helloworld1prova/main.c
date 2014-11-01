@@ -18,3 +18,8 @@ int quadrato(int a)
 {
     return a*a;
 }
+
+int allaquarta(int a)
+{
+    return quadrato(quadrato(a));
+}
