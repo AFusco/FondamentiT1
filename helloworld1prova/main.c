@@ -13,3 +13,8 @@ int main(int argc, const char * argv[]) {
     printf("Hello, World!\n");
     return 0;
 }
+
+int quadrato(int a)
+{
+    return a*a;
+}
