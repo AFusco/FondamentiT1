@@ -18,3 +18,8 @@ int quadrato(int a)
 {
     return a*a;
 }
+
+int cubo(int b)
+{
+    return b*quadrato(b);
+}
