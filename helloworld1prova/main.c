@@ -19,7 +19,13 @@ int quadrato(int a)
     return a*a;
 }
 
+<<<<<<< HEAD
 int allaquarta(int a)
 {
     return quadrato(quadrato(a));
+=======
+int cubo(int b)
+{
+    return b*quadrato(b);
+>>>>>>> issue#1
 }
