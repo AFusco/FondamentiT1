@@ -1,0 +1,21 @@
+//
+//  Arrays.h
+//  Librerie
+//
+//  Created by Alessandro Fusco on 10/11/14.
+//  Copyright (c) 2014 Alessandro Fusco. All rights reserved.
+//
+
+#ifndef __Librerie__Arrays__
+#define __Librerie__Arrays__
+
+#include <stdio.h>
+#include "DataTypes.h"
+
+int scanArrayTerminatedBy(TYPE arr[], int dim, char* format, TYPE terminator);
+int scanArrayTerminatedByZero(TYPE arr[], int dim, char* format);
+int searchPos(TYPE arr[], int dim, TYPE element);
+
+
+
+#endif /* defined(__Librerie__Arrays__) */
