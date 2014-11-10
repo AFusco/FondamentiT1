@@ -19,6 +19,7 @@ int searchLast(TYPE arr[], int dim, TYPE element);
 BOOL inArray( TYPE arr[], int dim, TYPE element );
 void printArray( TYPE arr[], int dim, char* format);
 BOOL compareEquals(TYPE arr1[], int dim1, TYPE arr2[], int dim2);
+BOOL compareUnordered(TYPE arr1[], int dim1, TYPE arr2[], int dim2);
 
 
 

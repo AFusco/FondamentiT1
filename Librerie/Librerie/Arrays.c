@@ -190,6 +190,69 @@ BOOL compareEquals(TYPE arr1[], int dim1, TYPE arr2[], int dim2)
     return result;
 }
 
+/* BOOL compareUnordered
+ * ---------------------
+ * Controlla se due array contengono gli stessi elementi
+ *
+ * Args:
+ * @TYPE arr1[]: l'array da stampare a schermo
+ * @int dim1: la dimensione logica dell'array @arr[]
+ * @TYPE arr1[]: l'array da stampare a schermo
+ * @int dim1: la dimensione logica dell'array @arr[]
+ *
+ * RETURN: true se ogni valore di arr1 è presente in arr2, altrimenti false
+ */
+
+BOOL compareUnordered(TYPE arr1[], int dim1, TYPE arr2[], int dim2)
+{
+    BOOL alreadyChecked[SIZE];
+    BOOL result = true;
+    
+    int tempPos, tempOffset;
+    BOOL found = false;
+    
+    int i;
+    
+    if (dim1 != dim2)
+    {
+        return false;
+    }
+    
+    for ( i = 0; i < SIZE; i++ ) //inizializza tutti gli elementi di alreadyChecked a false
+    {
+        alreadyChecked[i] = false;
+    }
+    
+    for (i = 0; i < dim1 && result == true; i++)
+    {
+        tempOffset = 0;
+        found = false;
+        do
+        {
+            //Trova la posizione dell'elemento arr1[i] in arr2
+            tempPos = searchFirst(&arr2[tempOffset], dim2-tempOffset, arr1[i]) + tempOffset;
+            
+            if ( tempPos >= 0 && alreadyChecked[tempPos] == true )   //Se si trova ed è già stato "preso"
+            {
+                tempOffset = tempPos + 1; //Cambia l'offset per ripetere la ricerca
+            }
+            else if ( tempPos >= 0 && !alreadyChecked[tempPos]) //Altrimenti se è stato trovato ed non è ancora stato preso
+            {
+                found = true; //Flag per uscire dal ciclo while
+                alreadyChecked[tempPos] = true; //Imposto la posizione come già controllata in alreadyChecked
+            }
+            else //Altrimenti, se l'elemento nell'offset non è stato trovato,
+            {
+                result = false; //Gli array sono diversi
+            }
+            
+        }
+        while (tempOffset <= dim1 && found == false && result == true);
+        
+    }
+    
+    return result;
+}
 
 
 

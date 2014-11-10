@@ -10,6 +10,7 @@
 #define Librerie_DataTypes_h
 
 #define TYPE int
+#define SIZE 10
 
 #include <stdio.h>
 

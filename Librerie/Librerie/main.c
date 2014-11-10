@@ -5,21 +5,22 @@
 //  Created by Alessandro Fusco on 10/11/14.
 //  Copyright (c) 2014 Alessandro Fusco. All rights reserved.
 //
-#define N 3
 
 //#include <stdio.h>
 #include "Arrays.h"
 //#include "DataTypes.h"
 
 int main(int argc, const char * argv[]) {
-    TYPE arr1[N], arr2[N];
+    TYPE arr1[SIZE], arr2[SIZE];
     int dim1, dim2;
     BOOL uguali;
+    printf("Array 1: ");
+    dim1 = scanArrayTerminatedByZero(arr1, SIZE);
     
-    dim1 = scanArrayTerminatedByZero(arr1, N, "%d");
-    dim2 = scanArrayTerminatedByZero(arr2, N, "%d");
+    printf("Array 2: ");
+    dim2 = scanArrayTerminatedByZero(arr2, SIZE);
     
-    uguali = compareEquals(arr1, dim1, arr2, dim2);
+    uguali = compareUnordered(arr1, dim1, arr2, dim2);
     printf("%d", uguali);
     
 }
