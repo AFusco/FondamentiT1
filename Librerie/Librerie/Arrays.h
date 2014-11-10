@@ -10,7 +10,7 @@
 #define __Librerie__Arrays__
 
 #include <stdio.h>
-#include "DataTypes.h"
+#include "ArrayDataTypes.h"
 
 int scanArrayTerminatedBy(TYPE arr[], int dim, char* format, TYPE terminator);
 int scanArrayTerminatedByZero(TYPE arr[], int dim, char* format);
@@ -19,7 +19,6 @@ int searchLast(TYPE arr[], int dim, TYPE element);
 BOOL inArray( TYPE arr[], int dim, TYPE element );
 void printArray( TYPE arr[], int dim, char* format);
 BOOL compareEquals(TYPE arr1[], int dim1, TYPE arr2[], int dim2);
-
 
 
 

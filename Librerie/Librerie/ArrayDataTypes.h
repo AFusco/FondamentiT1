@@ -11,8 +11,11 @@
 
 #define TYPE int
 
+#include <stdio.h>
+
 typedef enum { false, true } BOOL;
 
+TYPE scanType();
 BOOL equals(TYPE a, TYPE b);
 
 #endif

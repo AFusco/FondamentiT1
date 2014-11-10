@@ -6,7 +6,15 @@
 //  Copyright (c) 2014 Alessandro Fusco. All rights reserved.
 //
 
-#include "DataTypes.h"
+#include "ArrayDataTypes.h"
+
+
+TYPE scanType()
+{
+    TYPE temp;
+    scanf("%d", &temp );
+    return temp;
+}
 
 BOOL equals(TYPE a, TYPE b)
 {

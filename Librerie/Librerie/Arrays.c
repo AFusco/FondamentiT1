@@ -9,6 +9,18 @@
 
 #include "Arrays.h"
 
+/* scanArrayTerminatedBy
+ * ---------------------
+ * Prende da stdinput al più @dim elementi, di formato @format, 
+ * terminati dall'elemento @terminator, e li inserisce in @arr[]
+ * 
+ * Args:
+ * @TYPE arr[]
+ *
+ *
+ */
+
+
 int scanArrayTerminatedBy(TYPE arr[], int dim, char* format, TYPE terminator)
 {
     int i = 0;
@@ -18,7 +30,7 @@ int scanArrayTerminatedBy(TYPE arr[], int dim, char* format, TYPE terminator)
         arr[i] = scanf(format, &temp);
         i++;
     }
-    while (i < dim && temp != terminator);
+    while (i < dim && !equals(temp, terminator));
     return i;
 }
 
@@ -98,6 +110,8 @@ BOOL compareEquals(TYPE arr1[], int dim1, TYPE arr2[], int dim2)
     
     return result;
 }
+
+
 
 
 
