@@ -13,9 +13,6 @@
 
 typedef enum { false, true } BOOL;
 
-BOOL equals(TYPE a, TYPE b)
-{
-    return a == b;
-}
+BOOL equals(TYPE a, TYPE b);
 
 #endif

@@ -1,3 +1,4 @@
+//  Matricola: 0000718566
 //
 //  Arrays.c
 //  Librerie
@@ -52,6 +53,50 @@ int searchLast(TYPE arr[], int dim, TYPE element)
         }
     }
     return found;
+}
+
+BOOL inArray( TYPE arr[], int dim, TYPE element )
+{
+    int i, found = false;
+    
+    for (i = 0; i < dim && found < 0; i++)
+    {
+        if ( equals(arr[i], element) )
+        {
+            found = true;
+        }
+    }
+    return found;
+}
+
+void printArray( TYPE arr[], int dim, char* format)
+{
+    int i;
+    for (i = 0; i < dim; i++)
+    {
+        printf(format, arr[i]);
+    }
+}
+
+BOOL compareEquals(TYPE arr1[], int dim1, TYPE arr2[], int dim2)
+{
+    int i;
+    BOOL result = true;
+    
+    if (dim1 != dim2) //Se le dimensioni degli array sono diverse, gli array non possono essere uguali
+    {
+        return false;
+    }
+    
+    for ( i = 0; i < dim1 && result == true; i++ )
+    {
+        if (!equals(arr1[i], arr2[i]))
+        {
+            result = false;
+        }
+    }
+    
+    return result;
 }
 
 

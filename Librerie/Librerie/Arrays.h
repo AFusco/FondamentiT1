@@ -14,7 +14,12 @@
 
 int scanArrayTerminatedBy(TYPE arr[], int dim, char* format, TYPE terminator);
 int scanArrayTerminatedByZero(TYPE arr[], int dim, char* format);
-int searchPos(TYPE arr[], int dim, TYPE element);
+int searchFirst(TYPE arr[], int dim, TYPE element);
+int searchLast(TYPE arr[], int dim, TYPE element);
+BOOL inArray( TYPE arr[], int dim, TYPE element );
+void printArray( TYPE arr[], int dim, char* format);
+BOOL compareEquals(TYPE arr1[], int dim1, TYPE arr2[], int dim2);
+
 
 
 
