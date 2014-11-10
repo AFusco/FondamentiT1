@@ -16,6 +16,7 @@
 typedef enum { false, true } BOOL;
 
 TYPE scanType();
+void printType(TYPE a);
 BOOL equals(TYPE a, TYPE b);
 
 #endif

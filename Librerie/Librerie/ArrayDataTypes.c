@@ -16,6 +16,11 @@ TYPE scanType()
     return temp;
 }
 
+void printType(TYPE a)
+{
+    printf("%d", a);
+}
+
 BOOL equals(TYPE a, TYPE b)
 {
     return a == b;

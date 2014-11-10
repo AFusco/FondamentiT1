@@ -12,8 +12,8 @@
 #include <stdio.h>
 #include "ArrayDataTypes.h"
 
-int scanArrayTerminatedBy(TYPE arr[], int dim, char* format, TYPE terminator);
-int scanArrayTerminatedByZero(TYPE arr[], int dim, char* format);
+int scanArrayTerminatedBy(TYPE arr[], int dim, TYPE terminator);
+int scanArrayTerminatedByZero(TYPE arr[], int dim );
 int searchFirst(TYPE arr[], int dim, TYPE element);
 int searchLast(TYPE arr[], int dim, TYPE element);
 BOOL inArray( TYPE arr[], int dim, TYPE element );
