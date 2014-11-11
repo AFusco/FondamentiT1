@@ -10,6 +10,8 @@
 #include "Arrays.h"
 //#include "DataTypes.h"
 
+//Commento aggiunto da Nicola
+
 int main(int argc, const char * argv[]) {
     TYPE arr1[SIZE], arr2[SIZE];
     int dim1, dim2;
