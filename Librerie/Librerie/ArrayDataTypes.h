@@ -19,5 +19,13 @@ typedef enum { false, true } BOOL;
 TYPE scanType();
 void printType(TYPE a);
 BOOL equals(TYPE a, TYPE b);
+BOOL isGreaterThan(TYPE a, TYPE b);
+BOOL isLessThan(TYPE a, TYPE b);
+BOOL isGreaterOrEqualThan(TYPE a, TYPE b);
+BOOL isLessOrEqualThan(TYPE a, TYPE b);
+
+void copySorted(TYPE arr1[], int dim1, TYPE result[]);
+
+
 
 #endif

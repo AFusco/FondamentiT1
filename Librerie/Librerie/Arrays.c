@@ -9,6 +9,11 @@
 
 #include "Arrays.h"
 
+
+// FUNZIONI DI INPUT E OUTPUT
+
+
+
 /* int scanArrayTerminatedBy
  * ---------------------
  * Prende da stdinput al più @dim elementi, di formato @format, 
@@ -50,6 +55,60 @@ int scanArrayTerminatedByZero(TYPE arr[], int dim)
 {
     return scanArrayTerminatedBy(arr, dim, 0);
 }
+
+/* void printArray
+ * ---------------------
+ * Stampa a schermo un'array
+ *
+ * Args:
+ * @TYPE arr[]: l'array da stampare a schermo
+ * @int dim: la dimensione logica dell'array @arr[]
+ * @char* separator: il separatore tra un elemento e l'altro
+ *
+ */
+
+void printArray( TYPE arr[], int dim, char* separator)
+{
+    int i;
+    for (i = 0; i < dim; i++)
+    {
+        printType(arr[i]);
+        if (separator != NULL)
+        {
+            printf("%s", separator);
+        }
+    }
+}
+
+//
+// COPIA DI UN ARRAY
+//
+
+
+/* void copyArray
+ * ---------------------
+ *
+ *  Copia ogni elemento di @original[] in copy.
+ *  Si assume che la dimensione di copy sia uguale o maggiore di quella di original
+ *
+ */
+
+void copyArray(TYPE original[], int dim, TYPE copy[])
+{
+    int i;
+    
+    for (i = 0; i < dim; i++)
+    {
+        copy[i] = original[i];
+    }
+}
+
+
+
+//
+// FUNZIONI DI RICERCA
+//
+
 
 /* int searchFirst
  * ---------------------
@@ -131,29 +190,14 @@ BOOL inArray( TYPE arr[], int dim, TYPE element )
     return found;
 }
 
-/* void printArray
- * ---------------------
- * Stampa a schermo un'array
- *
- * Args:
- * @TYPE arr[]: l'array da stampare a schermo
- * @int dim: la dimensione logica dell'array @arr[]
- * @char* separator: il separatore tra un elemento e l'altro
- *
- */
 
-void printArray( TYPE arr[], int dim, char* separator)
-{
-    int i;
-    for (i = 0; i < dim; i++)
-    {
-        printType(arr[i]);
-        if (separator != NULL)
-        {
-            printf("%s", separator);
-        }
-    }
-}
+
+//
+// FUNZIONI DI CONFRONTO
+//
+
+
+
 
 /* BOOL compareEquals
  * ---------------------
@@ -252,6 +296,104 @@ BOOL compareUnordered(TYPE arr1[], int dim1, TYPE arr2[], int dim2)
     }
     
     return result;
+}
+
+
+
+//
+// FUNZIONI DI ORDINAMENTO
+//
+
+
+/*
+ *  Implementazione dell'algoritmo mergeSort ricorsivo
+ */
+
+void mergeSort(TYPE arr[], int first, int last) {
+    
+    int center;
+    
+    if ( first < last) {
+        center = ( first + last )/2;
+        mergeSort(arr, first, center);
+        mergeSort(arr, center+1, last);
+        merge(arr, first, center, last);
+    }
+    return;
+}
+
+/*
+ *  Funzione di merging di supporto a mergeSort
+ */
+
+void merge(TYPE a[], int start, int center, int end) {
+    
+    int i, j, k;
+    int tempArr[SIZE];
+    
+    i = start;
+    j = center+1;
+    k = 0;
+    
+    //Fai il merge dei due sottoarray ordinati
+    
+    while ( (i<=center) && (j<=end) ) {
+        if ( isLessOrEqualThan(a[i], a[j]) ) {
+            tempArr[k] = a[i];
+            i++;
+            k++;
+        } else {
+            tempArr[k] = a[j];
+            k++;
+            j++;
+        }
+    }
+    
+    //Aggiungi quelli del primo o del secondo se ne avanzano
+    
+    while (i<=center)
+    {
+        tempArr[k] = a[i];
+        k++;
+        i++;
+    }
+    
+    while (j<=end)
+    {
+        tempArr[k] = a[j];
+        k++;
+        j++;
+    }
+    
+    //Inserisci gli elementi ordinati al posto giusto nell'array originale
+    for (k=start; k<=end; k++)
+        a[k] = tempArr[k-start];
+    
+}
+
+/* void sortArray
+ * --------------
+ * Ordina gli elementi dell'array arr[] tramite mergeSort O(nlogn)
+ *
+ */
+
+void sortArray(TYPE arr[], int dim)
+{
+    mergeSort(arr, 0, dim-1);
+}
+
+
+/*
+ * void copySortedArray
+ * 
+ * Copia l'array arr1[] in result[], che poi verrà ordinato tramite mergeSort
+ *
+ */
+
+void copySortedArray(TYPE arr1[], int dim1, TYPE result[])
+{
+    copyArray(arr1, dim1, result);
+    sortArray(result,  dim1);
 }
 
 
