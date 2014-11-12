@@ -8,24 +8,21 @@
 
 //#include <stdio.h>
 #include "Arrays.h"
+#include "List.h"
+
 //#include "DataTypes.h"
 
 int main(int argc, const char * argv[]) {
-    TYPE arr1[SIZE], arr2[SIZE];
-    int dim1, dim2;
-
-    printf("Array 1: ");
-    dim1 = scanArrayTerminatedByZero(arr1, SIZE);
     
-    //printf("Array 2: ");
-    //dim2 = scanArrayTerminatedByZero(arr2, SIZE);
+    TYPE_L zero, orari[10];
     
-    dim2 = dim1;
-    copySorted(arr1, dim1, arr2);
+    zero.h = 0; zero.m = 0; zero.s = 0;
+    scanArrayTerminatedBy(orari, 10, zero);
     
+    printArray(orari, 10, " ");
+/*
+    sortArray(orari, 10);
     
-    printArray(arr1, dim1, " ");
-    printf("\n");
-    printArray(arr2, dim2, " ");
-
+    printArray(orari, 10, " ");n */
+    return 0;
 }

@@ -49,12 +49,12 @@ int scanArrayTerminatedBy(TYPE arr[], int dim, TYPE terminator)
 
 /*
  * Come scanArrayTerminatedBy ma con terminator = 0 di default
- */
+ 
 
 int scanArrayTerminatedByZero(TYPE arr[], int dim)
 {
     return scanArrayTerminatedBy(arr, dim, 0);
-}
+}*/
 
 /* void printArray
  * ---------------------
@@ -329,7 +329,7 @@ void mergeSort(TYPE arr[], int first, int last) {
 void merge(TYPE a[], int start, int center, int end) {
     
     int i, j, k;
-    int tempArr[SIZE];
+    TYPE tempArr[SIZE];
     
     i = start;
     j = center+1;
@@ -339,11 +339,11 @@ void merge(TYPE a[], int start, int center, int end) {
     
     while ( (i<=center) && (j<=end) ) {
         if ( isLessOrEqualThan(a[i], a[j]) ) {
-            tempArr[k] = a[i];
+            copy(&tempArr[k], a[i]);
             i++;
             k++;
         } else {
-            tempArr[k] = a[j];
+            copy(&tempArr[k], a[j]);
             k++;
             j++;
         }
@@ -353,21 +353,21 @@ void merge(TYPE a[], int start, int center, int end) {
     
     while (i<=center)
     {
-        tempArr[k] = a[i];
+        copy(&tempArr[k], a[i]);
         k++;
         i++;
     }
     
     while (j<=end)
     {
-        tempArr[k] = a[j];
+        copy(&tempArr[k], a[j]);
         k++;
         j++;
     }
     
     //Inserisci gli elementi ordinati al posto giusto nell'array originale
     for (k=start; k<=end; k++)
-        a[k] = tempArr[k-start];
+        copy(&a[k], tempArr[k-start]);
     
 }
 

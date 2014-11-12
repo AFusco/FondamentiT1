@@ -31,8 +31,8 @@ BOOL compareEquals(TYPE arr1[], int dim1, TYPE arr2[], int dim2);
 BOOL compareUnordered(TYPE arr1[], int dim1, TYPE arr2[], int dim2);
 
 //Ordinamento
-void merge(int arr[], int start, int center, int end);
-void mergeSort(int arr[], int first, int last);
+void merge(TYPE arr[], int start, int center, int end);
+void mergeSort(TYPE arr[], int first, int last);
 void sortArray(TYPE arr[], int dim);
 
 
