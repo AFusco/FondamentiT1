@@ -12,6 +12,8 @@
 
 //#include "DataTypes.h"
 
+//Commento aggiunto da Nicola
+
 int main(int argc, const char * argv[]) {
     
     TYPE_L zero, orari[10];
