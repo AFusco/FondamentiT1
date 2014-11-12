@@ -7,22 +7,12 @@
 //
 
 //#include <stdio.h>
-#include "Arrays.h"
-#include "List.h"
+#include "DataTypes.h"
+
 
 //#include "DataTypes.h"
 
 int main(int argc, const char * argv[]) {
     
-    TYPE_L zero, orari[10];
-    
-    zero.h = 0; zero.m = 0; zero.s = 0;
-    scanArrayTerminatedBy(orari, 10, zero);
-    
-    printArray(orari, 10, " ");
-/*
-    sortArray(orari, 10);
-    
-    printArray(orari, 10, " ");n */
     return 0;
 }
