@@ -9,27 +9,51 @@
 #ifndef __Librerie__DataTypes__
 #define __Librerie__DataTypes__
 
-#include <stdio.h>
+#include "common.h"
+#include "Orario.h"
 
-typedef enum {false, true} BOOL;
+typedef int TYPE;
+
+
 typedef TYPE TYPE_A; //PER LA LIBRERIA ARRAY
 typedef TYPE TYPE_L; //PER LA LIBRERIA LIST
 
+#define TYPE_scanFormat "%d" //Formato utilizzato per la scanf
+#define TYPE_printFormat "%d" //Formato utilizzato per la printf
+#define TYPE_args 1 //Numero di flags nella stringa di formato, usato per controllare gli errori
+
+
+
+/* Funzioni da modificare ad hoc */
+
 //INPUT
-TYPE_A scanType();
+int fscanType(FILE* stream, TYPE* scanned);
+
+//OUTPUT
+void printType(TYPE a);
+
+//CONFRONTO
+int compare(TYPE a, TYPE b);
 
 
-void printType(TYPE_A a);
-BOOL equals(TYPE_A a, TYPE_A b);
-BOOL isGreaterThan(TYPE_A a, TYPE_A b);
 
+/* Funzioni già implementate */
 
-BOOL isLessThan(TYPE_A a, TYPE_A b);
-BOOL isGreaterOrEqualThan(TYPE_A a, TYPE_A b);
-BOOL isLessOrEqualThan(TYPE_A a, TYPE_A b);
-int compare(TYPE_A a, TYPE_A b);
-void copy(TYPE_A *b, TYPE_A a);
-void copySorted(TYPE_A arr1[], int dim1, TYPE_A result[]);
+//INPUT
+void scanType(TYPE* scanned);
+
+//CONFRONTO
+BOOL isLessThan(TYPE a, TYPE b);
+BOOL isGreaterOrEqualThan(TYPE a, TYPE b);
+BOOL isLessOrEqualThan(TYPE a, TYPE b);
+BOOL isGreaterThan(TYPE a, TYPE b);
+BOOL equals(TYPE a, TYPE b);
+
+TYPE maxType(TYPE a, TYPE b);
+TYPE minType(TYPE a, TYPE b);
+
+//COPIA
+void copy(TYPE *b, TYPE a);
 
 
 #endif /* defined(__Librerie__DataTypes__) */

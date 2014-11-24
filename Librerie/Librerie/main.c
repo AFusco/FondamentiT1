@@ -6,13 +6,17 @@
 //  Copyright (c) 2014 Alessandro Fusco. All rights reserved.
 //
 
-//#include <stdio.h>
-#include "DataTypes.h"
-
-
 //#include "DataTypes.h"
+//#include "Errors.h"
 
-int main(int argc, const char * argv[]) {
+#include "common.h"
+
+
+int main()
+{
+    int a;
+    scanType(&a);
     
     return 0;
+    
 }
