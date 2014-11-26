@@ -14,6 +14,12 @@
 #include "DataTypes.h"
 
 
+
+void scanType_A(int* scanned);
+int equals_A(TYPE_A a, TYPE_A b);
+
+
+
 //Input e Output
 int scanArrayTerminatedBy(TYPE_A arr[], int dim, TYPE_A terminator);
 void printArray( TYPE_A arr[], int dim, char* separatore);

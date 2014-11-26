@@ -13,25 +13,23 @@
 #define TYPE_args 1 //Numero di flags nella stringa di formato, usato per controllare gli errori
 
 
-
 //INPUT
 int fscanType(FILE* stream, TYPE* scanned)
 {
-    
-    //CAMBIARE QUESTA RIGA
-    int res = fscanf(stream, TYPE_scanFormat, scanned);
-    
-    //NON CAMBIARE
-    if (res == EOF) {
-        return ENDOFFILE_REACHED;
-    }
-    else if ( res != TYPE_args )
+    string line = getString(stream);
+    if (line == NULL)
+        return -1;
+
+    //CAMBIARE SOLO I PARAMETRI PASSATI ALLA SSCANF
+    if (sscanf(line, TYPE_printFormat, scanned) == TYPE_args)
     {
-        return INVALID_INPUT;
+        free(line);
+        return 0;
     }
     else
     {
-        return 0;
+        free(line);
+        return INVALID_INPUT;
     }
     
 }
@@ -103,7 +101,6 @@ void scanType(TYPE* scanned)
         a = fscanType(stdin, scanned);
         if (a != 0)
         {
-            fpurge(stdin);
             printf("Input non valido, riprova: ");
         }
     } while (a != 0);
@@ -140,3 +137,7 @@ TYPE minType(TYPE a, TYPE b)
 {
     return isGreaterOrEqualThan(a, b) ? b : a;
 }
+
+
+
+

@@ -25,13 +25,14 @@ typedef TYPE TYPE_L; //PER LA LIBRERIA LIST
 
 
 #define TYPE_L_printFormat TYPE_printFormat
-
+#define TYPE_A_printFormat TYPE_printFormat
 
 
 /* Funzioni da modificare ad hoc */
 
 //INPUT
 int fscanType(FILE* stream, TYPE* scanned);
+
 
 //OUTPUT
 void printType(TYPE a);

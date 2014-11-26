@@ -10,13 +10,18 @@
 #define Librerie_common_h
 
 
+//La dimensione di default del buffer stdin
+#define DEFAULT_BUFFER_CAPACITY 128
+
 typedef enum {false, true} BOOL;
+typedef char* string;
 
 #include <stdlib.h>
 #include <stdio.h>
 #include "Errors.h"
 #include <string.h>
 
-
+string getString(FILE* stream);
+string getStringTerminatedByChar(FILE* stream, char term);
 
 #endif
