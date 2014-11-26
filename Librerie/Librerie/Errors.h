@@ -12,19 +12,16 @@
 #include "common.h"
 #include "DataTypes.h"
 
-typedef struct{
-    int code;
-    char* err;
-} Error;
 
-const extern Error INVALID_INPUT;
-const extern Error MALLOC_ERR;
-const extern Error ENDOFFILE_REACHED;
+#define INVALID_INPUT -2  //Input invalido
+#define MALLOC_ERR  -3 //Errore nell'allocazione di memoria
+#define ENDOFFILE_REACHED  -4 //Raggiunto EOF
+#define CANNOT_OPEN_FILE -5
 
 
-int errorHandler(Error e);
-Error throwException(Error e);
-Error newError(int code, char* err);
-void exitWithError(Error e);
+int errorHandler(int e);
+void exitWithError(int e);
+void printError(int code, char* err);
+
 
 #endif /* defined(__Librerie__Errors__) */

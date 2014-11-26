@@ -8,32 +8,46 @@
 
 #include "Errors.h"
 
+#define INVALID_INPUT -2  //Input invalido
+#define MALLOC_ERR  -3 //Errore nell'allocazione di memoria
+#define ENDOFFILE_REACHED  -4 //Raggiunto EOF
 
 
-const Error INVALID_INPUT = {2, "Input non valido"};
-const Error MALLOC_ERR = {3, "Errore nell'allocazione di memoria"};
-const Error ENDOFFILE_REACHED = {4, "Raggiunta la fine del file prima che terminasse la scansione"};
-
-
-
-
-
-
-int errorHandler(Error e)
+int errorHandler(int e)
 {
-    fprintf(stderr, "Errore %d: %s\n", e.code, e.err);
-    return e.code;
+    
+    
+    switch (e)
+    {
+        case INVALID_INPUT:
+            printError(e, "Input non valido");
+            break;
+        case MALLOC_ERR:
+            printError(e, "Errore nell'allocazione di memoria");
+            break;
+        case ENDOFFILE_REACHED:
+            printError(e, "E' stata raggiunta la fine del file");
+            break;
+        case CANNOT_OPEN_FILE:
+            printError(e, "Impossibile aprire il file");
+            break;
+        default:
+            printError(e, "Si e' verificato un errore generico");
+            break;
+    }
+    
+    return e;
 }
 
-Error newError(int code, char* err)
-{
-    Error ret;
-    ret.code = code;
-    ret.err = err;
-    return ret;
-}
 
-void exitWithError(Error e)
+
+void exitWithError(int e)
 {
     exit(errorHandler(e));
+}
+
+
+void printError(int code, char* err)
+{
+    fprintf(stderr, "Errore %d: %s\n", code, err);
 }
