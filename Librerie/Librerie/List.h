@@ -51,4 +51,10 @@ list lastNode(list l);
 void printList(list l);
 
 
+/* Ordinamento */
+void sortList(list* l);
+list mergeLists(list a, list b);
+void splitList(list l, list* prima, list* seconda);
+
+
 #endif /* defined(__Librerie__List__) */

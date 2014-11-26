@@ -42,7 +42,13 @@ void printType(TYPE a)
     printf(TYPE_printFormat, a);
 }
 
-//CONFRONTO
+
+
+/*
+ * La relazione tra a e b è la stessa tra compare(a,b) e 0
+ * (es: se a >= b allora compare(a,b) >= 0)
+ *
+ */
 int compare(TYPE a, TYPE b)
 {
     
@@ -104,7 +110,7 @@ void scanType(TYPE* scanned)
     
 }
 
-//CONFRONTO
+//CONFRONTO 
 BOOL isLessThan(TYPE a, TYPE b)
 {
     return compare(a, b) < 0;

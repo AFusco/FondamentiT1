@@ -16,7 +16,6 @@
 
 //Input e Output
 int scanArrayTerminatedBy(TYPE_A arr[], int dim, TYPE_A terminator);
-int scanArrayTerminatedByZero(TYPE_A arr[], int dim );
 void printArray( TYPE_A arr[], int dim, char* separatore);
 
 //Copia

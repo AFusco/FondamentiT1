@@ -10,13 +10,10 @@
 //#include "Errors.h"
 
 #include "common.h"
+#include "List.h"
 
 
 int main()
 {
-    int a;
-    scanType(&a);
-    
     return 0;
-    
 }
