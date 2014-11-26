@@ -13,6 +13,7 @@
 #define TYPE_args 1 //Numero di flags nella stringa di formato, usato per controllare gli errori
 
 
+
 //INPUT
 int fscanType(FILE* stream, TYPE* scanned)
 {
@@ -22,11 +23,11 @@ int fscanType(FILE* stream, TYPE* scanned)
     
     //NON CAMBIARE
     if (res == EOF) {
-        return ENDOFFILE_REACHED.code;
+        return ENDOFFILE_REACHED;
     }
     else if ( res != TYPE_args )
     {
-        return INVALID_INPUT.code;
+        return INVALID_INPUT;
     }
     else
     {
@@ -82,16 +83,6 @@ void copy(TYPE *b, TYPE a)
 {
     *b = a;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

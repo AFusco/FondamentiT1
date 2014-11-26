@@ -9,6 +9,7 @@
 #ifndef __Librerie__DataTypes__
 #define __Librerie__DataTypes__
 
+#include "Errors.h"
 #include "common.h"
 #include "Orario.h"
 
@@ -21,6 +22,9 @@ typedef TYPE TYPE_L; //PER LA LIBRERIA LIST
 #define TYPE_scanFormat "%d" //Formato utilizzato per la scanf
 #define TYPE_printFormat "%d" //Formato utilizzato per la printf
 #define TYPE_args 1 //Numero di flags nella stringa di formato, usato per controllare gli errori
+
+
+#define TYPE_L_printFormat TYPE_printFormat
 
 
 
