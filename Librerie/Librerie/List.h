@@ -12,6 +12,10 @@
 #include "common.h"
 #include "DataTypes.h"
 
+#ifndef TYPE_L_printFormat
+#define TYPE_L_printFormat TYPE_printFormat
+#endif
+
 typedef struct Node
 {
     TYPE_L value;
@@ -20,11 +24,15 @@ typedef struct Node
 
 typedef node* list;
 
+
 /* Creazione e distruzione lista */
 list emptyList();
+list createNode(TYPE_L val);
 void freeList(list l);
 
-/* Controlli sulle liste */
+
+
+/* Predicati */
 BOOL isEmptyList(list l);
 
 /* Inserimento elementi */
@@ -32,11 +40,15 @@ list addNodeHead(TYPE_L newVal, list l);
 list addNodeTail(TYPE_L newVal, list l);
 list insertOrdered(TYPE_L newVal, list l);
 
-/* Output */
-void printList(list l);
 
+
+/* Selettori */
 TYPE_L head(list l);
 list tail(list l);
+list lastNode(list l);
+
+/* Output */
+void printList(list l);
 
 
 #endif /* defined(__Librerie__List__) */
