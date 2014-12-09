@@ -8,21 +8,12 @@
 
 #include "List.h"
 
-
 //DA MODIFICARE SE TYPE_L e TYPE NON COINCIDONO
 int compareTypeL(TYPE_L a, TYPE_L b)
 {
     //Riutilizza la funzione del tipo TYPE
     return compare(a, b);
 }
-
-
-
-
-
-
-
-
 
 /* list emptyList()
  * ----------------
